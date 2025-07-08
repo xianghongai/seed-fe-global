@@ -5,7 +5,7 @@ import type { Key, Scope } from './types';
  */
 export function validateScope(scope: Scope): void {
   if (!scope || typeof scope !== 'string') {
-    throw new Error('Scope must be a non-empty string');
+    throw new Error('[@seed-fe/global] Scope must be a non-empty string');
   }
 }
 
@@ -14,6 +14,6 @@ export function validateScope(scope: Scope): void {
  */
 export function validateKey(key: Key): void {
   if (!key || typeof key !== 'string') {
-    throw new Error('Key must be a non-empty string');
+    throw new Error('[@seed-fe/global] Key must be a non-empty string');
   }
 }

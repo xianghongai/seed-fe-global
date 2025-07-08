@@ -47,7 +47,7 @@ export class ProxyManager {
             get: () => store[scope][key],
             set: () => {
               logger.warn(
-                `警告: 尝试直接修改 ${scope}.${key} 被阻止。请使用 global.set('${scope}', '${key}', value) 进行修改。`
+                `[@seed-fe/global] Warning: Attempt to directly modify ${scope}.${key} was blocked. Please use global.set('${scope}', '${key}', value) to update.`
               );
               return false;
             },
@@ -60,7 +60,9 @@ export class ProxyManager {
         return scopeProxy;
       },
       set: () => {
-        logger.warn(`警告: 尝试直接修改 ${scope} 被阻止。请使用 global.set('${scope}', 'key', value) 进行修改。`);
+        logger.warn(
+          `[@seed-fe/global] Warning: Attempt to directly modify ${scope} was blocked. Please use global.set('${scope}', 'key', value) to update.`
+        );
         return false;
       },
     });
